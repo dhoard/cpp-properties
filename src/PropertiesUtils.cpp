@@ -37,21 +37,13 @@ std::string RightTrim(const std::string& str) {
 }
 
 std::string LeftTrim(const std::string& str) {
-  std::string rstr = ltrim(str);
+    std::string rstr = ltrim(str);
 
-  while (rstr != ltrim(rstr)) {
-    rstr = ltrim(rstr);
-  }
-
-  return rstr;
-}
-
-std::string ltrim(const std::string& str) {
-    std::string::size_type s = str.find_first_not_of(TRIM_DELIMITERS);
-    if (s == std::string::npos) {
-        return "";
+    while (rstr != ltrim(rstr)) {
+        rstr = ltrim(rstr);
     }
-    return str.substr(s);
+
+    return rstr;
 }
 
 std::string Trim(const std::string& str) {
@@ -94,3 +86,12 @@ bool IsEmptyLine(const std::string& str) {
 } // namespace PropertiesUtils
 } // namespace cppproperties
 
+const std::string TRIM_DELIMITERS = " \f\n\r\t\v";
+
+std::string ltrim(const std::string& str) {
+    std::string::size_type s = str.find_first_not_of(TRIM_DELIMITERS);
+    if (s == std::string::npos) {
+        return "";
+    }
+    return str.substr(s);
+}
