@@ -33,7 +33,6 @@ namespace PropertiesUtils {
  * This function doesn't modify the given str.
  */
 std::string LeftTrim(const std::string& str);
-std::string ltrim(const std::string& str);
 
 /**
  * Right trims a string.
@@ -72,5 +71,7 @@ bool IsEmptyLine(const std::string& str);
 
 } // namespace PropertiesUtils
 } // namespace cppproperties
+
+std::string ltrim(const std::string& str);
 
 #endif /* PROPERTIESUTILS_H_ */
