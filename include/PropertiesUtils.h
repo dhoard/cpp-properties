@@ -33,6 +33,7 @@ namespace PropertiesUtils {
  * This function doesn't modify the given str.
  */
 std::string LeftTrim(const std::string& str);
+std::string ltrim(const std::string& str);
 
 /**
  * Right trims a string.
